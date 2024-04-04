@@ -3,6 +3,8 @@ figure(fig);
 hold on
 if strcmp(rep, 'quat')
     rot = quat2rotm(rot);
+elseif strcmp(rep, 'aa')
+    rot = aa2rot(rot);
 end
 endpts = rot * 0.2 + pos;
 n = [nan; nan; nan];

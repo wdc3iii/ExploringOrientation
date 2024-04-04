@@ -1,8 +1,8 @@
-function [omega, theta] = quat2aa(q)
-theta = 2 * acos(q(1));
-if theta == 0
-    omega = zeros(3, 1);
+function aa = quat2aa(q)
+aa.theta = 2 * acos(q(1));
+if aa.theta == 0
+    aa.omega = zeros(3, 1);
 else
-    omega = q(2:4)' / sin(theta / 2);
+    aa.omega = q(2:4)' / sin(aa.theta / 2);
 end
 end
