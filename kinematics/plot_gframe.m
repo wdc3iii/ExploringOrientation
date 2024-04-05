@@ -1,11 +1,8 @@
-function plot_frame(fig, pos, rot, rep, label)
+function plot_gframe(fig, g, label)
 figure(fig);
-hold on
-if strcmp(rep, 'quat')
-    rot = quat2rotm(rot);
-elseif strcmp(rep, 'aa')
-    rot = aa2rot(rot);
-end
+hold on;
+rot = g.R;
+pos = g.p;
 endpts = rot * 0.2 + pos;
 n = [nan; nan; nan];
 lines = [pos endpts(:, 1) n pos endpts(:, 2) n pos endpts(:, 3)];
