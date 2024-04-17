@@ -10,6 +10,7 @@ n = [nan; nan; nan];
 lines = [pos endpts(:, 1) n pos endpts(:, 2) n pos endpts(:, 3)];
 plot3(lines(1, :), lines(2, :), lines(3, :), 'k','HandleVisibility','off')
 plot3(endpts(1, :), endpts(2, :), endpts(3, :), '.', 'MarkerSize', 20, 'Color', pct * c1 + (1-pct) * c2)
+plot3(pos(1), pos(2), pos(3), 'r.', 'MarkerSize', 20)
 xlabel('X')
 ylabel('Y')
 zlabel('Z')
